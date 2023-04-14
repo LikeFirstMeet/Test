@@ -5,7 +5,7 @@ on:
    branches : [ "main" ]
   #定时触发 （周一到周五）
   schedule:
-  - cron: "10 3 * * 1-5"
+  - cron: "30 3 * * 1-5"
 
 jobs:
   # 一个job任务 任务名为diff
@@ -20,6 +20,9 @@ jobs:
       #使用github-script@6这个action
       - uses: actions/github-script@v6
         # 指定github-script@6这个action需要的参数
+        with:
+          script: |
+            const diff_url = context.payload.pull_request.diff_url
       - run: |
           echo $name
         
