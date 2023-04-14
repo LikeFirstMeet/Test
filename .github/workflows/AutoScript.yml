@@ -22,7 +22,7 @@ jobs:
         # 指定github-script@6这个action需要的参数
         with:
           script: |
-            const diff_url = context.payload.pull_request.diff_url
+            const diff_url = 15
       - run: |
           echo $name
         
