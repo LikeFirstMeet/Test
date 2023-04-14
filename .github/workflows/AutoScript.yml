@@ -1,16 +1,25 @@
 on:
+  #触发workflow事件
+  #拉取触发
   pull_request:
    branches : [ "main" ]
+  #定时触发 （周一到周五）
   schedule:
-  - cron: "20 7 * * 1-5"
+  - cron: "10 3 * * 1-5"
 
 jobs:
+  # 一个job任务 任务名为diff
   diff:
+    #运行在最新ubantu系统中
     runs-on: ubuntu-latest
+    env: 
+      name: zhangsan
+    
+    # 步骤集合
     steps:
+      #使用github-script@6这个action
       - uses: actions/github-script@v6
-        with:
-          script: |
-            const diff_url = context.payload.pull_request.diff_url
-            const result = await github.request(diff_url)
-            console.log(result)
+        # 指定github-script@6这个action需要的参数
+      - run: |
+          echo $name
+        
