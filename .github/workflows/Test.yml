@@ -2,10 +2,10 @@ name: Get all repo name
 
 on:
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
   schedule:
     # Runs at 01:00 UTC (9:00 AM Beijing) every day
-    - cron:  '01 2 * * *'
+    - cron:  '10 2 * * *'
 
 jobs:
   build:
