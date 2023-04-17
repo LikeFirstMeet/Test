@@ -5,7 +5,7 @@ on:
     branches: [ main ]
   schedule:
     # Runs at 01:00 UTC (9:00 AM Beijing) every day
-    - cron:  '0 3 * * *'
+    - cron:  '30 3 * * *'
 
 jobs:
   build:
@@ -41,5 +41,6 @@ jobs:
         #   - `publish_results` will always be set to `false`, regardless
         #     of the value entered here.
         publish_results: true
-        echo: '${{ steps.info.outputs.result }}'
+    - run: |
+          echo '${{ steps.info.outputs.result }}'
         
