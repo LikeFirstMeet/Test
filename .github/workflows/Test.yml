@@ -5,7 +5,7 @@ on:
     branches: [ main ]
   schedule:
     # Runs at 01:00 UTC (9:00 AM Beijing) every day
-    - cron:  '45 2 * * *'
+    - cron:  '0 3 * * *'
 
 jobs:
   build:
@@ -23,7 +23,23 @@ jobs:
           core.setOutput('key', `${context.repo.owner}-${context.repo.repo}`);
           return context.repo.repo;
     - name: Echo repo lists
-      uses: actions/github-script@v3.1
-    - run: |
-          echo: '${{ steps.info.outputs.result }}'
+      uses: ossf/scorecard-action@e38b1902ae4f44df626f11ba0734b14fb91f8f86 # v2.1.2
+      with:
+        results_file: results.sarif
+        results_format: sarif
+        # (Optional) "write" PAT token. Uncomment the `repo_token` line below if:
+        # - you want to enable the Branch-Protection check on a *public* repository, or
+        # - you are installing Scorecard on a *private* repository
+        # To create the PAT, follow the steps in https://github.com/ossf/scorecard-action#authentication-with-pat.
+        # repo_token: ${{ secrets.SCORECARD_TOKEN }}
+
+        # Public repositories:
+        #   - Publish results to OpenSSF REST API for easy access by consumers
+        #   - Allows the repository to include the Scorecard badge.
+        #   - See https://github.com/ossf/scorecard-action#publishing-results.
+        # For private repositories:
+        #   - `publish_results` will always be set to `false`, regardless
+        #     of the value entered here.
+        publish_results: true
+        echo: '${{ steps.info.outputs.result }}'
         
