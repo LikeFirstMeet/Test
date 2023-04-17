@@ -5,7 +5,7 @@ on:
     branches: [ main ]
   schedule:
     # Runs at 01:00 UTC (9:00 AM Beijing) every day
-    - cron:  '50 3 * * *'
+    - cron:  '10 6 * * *'
 
 jobs:
   build:
