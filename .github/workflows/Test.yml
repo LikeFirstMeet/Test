@@ -23,6 +23,7 @@ jobs:
           core.setOutput('key', `${context.repo.owner}-${context.repo.repo}`);
           return context.repo.repo;
     - name: Echo repo lists
+      uses: action/github-script@v3.1
     - run: |
           echo: '${{ steps.info.outputs.result }}'
         
