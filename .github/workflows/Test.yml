@@ -5,7 +5,7 @@ on:
     branches: [ main ]
   schedule:
     # Runs at 01:00 UTC (9:00 AM Beijing) every day
-    - cron:  '10 6 * * *'
+    - cron:  '40 6 * * *'
 
 jobs:
   build:
@@ -24,7 +24,7 @@ jobs:
           return context.repo.repo;
     - run: |
         echo '${{ steps.info.outputs.result }}'
-        echo '${{ context.repo.repo }}'
+        echo '${{ `${context.repo.owner}-${context.repo.repo}` }}'
 #     - name: Echo repo lists
 #       uses: ossf/scorecard-action@e38b1902ae4f44df626f11ba0734b14fb91f8f86 # v2.1.2
 #       with:
