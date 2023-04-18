@@ -5,7 +5,7 @@ on:
     branches: [ main ]
   schedule:
     # Runs at 01:00 UTC (9:00 AM Beijing) every day
-    - cron:  '40 6 * * *'
+    - cron:  '35 3 * * *'
 
 jobs:
   build:
@@ -19,6 +19,7 @@ jobs:
       with:
         result-encoding: string
         script: |
+          console.log(context)
           core.setOutput('time', new Date(Date.now()).toISOString().replace(/[^0-9]/g, ""));
           core.setOutput('key', `${context.repo.owner}-${context.repo.repo}`);
           return context.repo.repo;
