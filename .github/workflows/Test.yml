@@ -24,5 +24,6 @@ jobs:
           core.setOutput('key', `${context.repo.owner}-${context.repo.repo}`);
           return context.repo.repo;
     - run: |
-        echo '${{ steps.info.outputs.result }}'
+#        echo '${{ steps.info.outputs.result }}'
+        echo '${{ context.repo.owner }}'
         
