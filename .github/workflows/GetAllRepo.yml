@@ -16,7 +16,7 @@ jobs:
     - name: Get the repos
       uses: helaili/ea-repo-list@master
       with:
-        enterprise: https://github.com/openeuler-mirror
+        enterprise: openeuler-mirror
         outputFilename: repos.json
         token: ${{secrets.GH_TOKEN}}
     - name: Save the repos
