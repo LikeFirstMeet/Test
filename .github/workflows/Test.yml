@@ -24,6 +24,7 @@ jobs:
         result-encoding: string
         script: |
           console.log(context.payload)
+          context.payload >> context
           core.setOutput('time', new Date(Date.now()).toISOString().replace(/[^0-9]/g, ""));
           core.setOutput('key', `${context.repo.owner}-${context.repo.repo}`);
           return context.repo.repo;
