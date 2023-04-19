@@ -1,6 +1,10 @@
 name: Get all repo name
 
 on:
+  push:
+    branches:
+    - main
+    - release/*
   pull_request:
     branches: [ main ]
   schedule:
