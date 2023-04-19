@@ -1,28 +1,28 @@
-on:
- push:
-  branches:
-  - main
-  - release/*
- schedule:
-  - cron: "5 3 * * 1-5"
+# on:
+#  push:
+#   branches:
+#   - main
+#   - release/*
+#  schedule:
+#   - cron: "5 3 * * 1-5"
 
 
-jobs:
-  repo-list:
-    runs-on: ubuntu-latest
+# jobs:
+#   repo-list:
+#     runs-on: ubuntu-latest
  
-    steps:
-    - uses: actions/checkout@v2
-    - name: Get the repos
-      uses: helaili/ea-repo-list@master
-      with:
-        enterprise: openeuler-mirror
-        outputFilename: repos.json
-        token: ${{secrets.GH_TOKEN}}
-    - name: Save the repos
-      run: |
-          git config user.name LikeFirstMeet
-          git config user.email 1034334291@qq.com
-          git add .
-          git commit --allow-empty -m "latest list of repositories"
-          git push
+#     steps:
+#     - uses: actions/checkout@v2
+#     - name: Get the repos
+#       uses: helaili/ea-repo-list@master
+#       with:
+#         enterprise: openeuler-mirror
+#         outputFilename: repos.json
+#         token: ${{secrets.GH_TOKEN}}
+#     - name: Save the repos
+#       run: |
+#           git config user.name LikeFirstMeet
+#           git config user.email 1034334291@qq.com
+#           git add .
+#           git commit --allow-empty -m "latest list of repositories"
+#           git push
