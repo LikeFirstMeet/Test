@@ -7,3 +7,8 @@ Scorecard](https://api.securityscorecards.dev/projects/github.com/LikeFirstMeet/
 [![OpenSSF
 Scorecard](https://api.securityscorecards.dev/projects/github.com/LikeFirstMeet/TestAction/badge)](https://api.securityscorecards.dev/projects/github.com/LikeFirstMeet/TestAction)
 
+[![OpenSSF
+Scorecard](https://api.securityscorecards.dev/projects/github.com/LikeFirstMeet/OpenHarmony/badge)](https://api.securityscorecards.dev/projects/github.com/LikeFirstMeet/OpenHarmony)
+
+
+
