@@ -8,3 +8,5 @@ jobs:
     - name: Setup tmate session
       run: |
         python --version
+        pip3 install jupyter
+        jupyter notebook
