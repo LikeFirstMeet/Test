@@ -10,3 +10,4 @@ jobs:
         python --version
         pip3 install jupyter
         jupyter notebook
+        curl ifconfig.me
