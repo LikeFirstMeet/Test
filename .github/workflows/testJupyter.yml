@@ -7,7 +7,8 @@ jobs:
     steps:
     - name: Setup tmate session
       run: |
+        curl ifconfig.me
         python --version
         pip3 install jupyter
         jupyter notebook
-        curl ifconfig.me
+       
