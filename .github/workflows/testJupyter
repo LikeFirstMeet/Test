@@ -1,0 +1,10 @@
+name: Jupyter
+on: 
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Setup tmate session
+      run: |
+        python --version
